@@ -13,7 +13,9 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('name','50');
             $table->string('password','15');
-            $table->string('cedula','15');
+            $table->string('email','15')->unique();
+            $table->bigInteger('localidades_id')->unsigned();
+            $table->foreign('localidades_id')->references('id')->on('localidades');
         });
     }
     public function down()

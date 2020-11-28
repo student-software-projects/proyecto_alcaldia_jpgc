@@ -6,24 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateLocalidadesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('localidades', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('localidad','45');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('localidades');

@@ -11,6 +11,12 @@ class CreateJugadoresTable extends Migration
         Schema::create('jugadores', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombres','45');
+            $table->string('apellidos','45');
+            $table->string('numero_camisa','2')->unique();
+            $table->string('apodo','45');
+            $table->bigInteger('equipos_id')->unsigned();
+            $table->foreign('equipos_id')->references('id')->on('equipos');
         });
     }
 

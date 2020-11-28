@@ -13,7 +13,8 @@ class CreateEquiposTable extends Migration
             $table->timestamps();
             $table->string('nombre_equipo','45');
             $table->string('logo');
-
+            $table->bigInteger('localidades_id')->unsigned();
+            $table->foreign('localidades_id')->references('id')->on('localidades');
         });
     }
 

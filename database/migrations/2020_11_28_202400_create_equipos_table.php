@@ -6,24 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateEquiposTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre_equipo','45');
+            $table->string('logo');
+
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('equipos');
